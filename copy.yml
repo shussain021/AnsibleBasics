@@ -1,0 +1,15 @@
+---
+- name: Copying Script Practice with Arrays
+  hosts: webservers
+  become: yes
+  remote_user: root
+  tasks:
+
+  - name: Copying Arrays2.sh Script
+    copy: 
+      src: /root/bin/arrays2.sh
+      dest: /tmp/arrays2.sh
+      owner: root
+      group: root
+      mode: 0755  
+
