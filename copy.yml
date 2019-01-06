@@ -6,7 +6,7 @@
   tasks:
 
   - name: Copying Arrays2.sh Script
-   copy: 
+    copy: 
       src: /root/bin/arrays2.sh
       dest: /tmp/arrays2.sh
       owner: root
