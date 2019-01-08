@@ -1,0 +1,10 @@
+---
+- name: Fail Module in Client
+  hosts: webservers
+  gather_facts: true
+  remote_user: root
+  tasks:
+
+    - fail: 
+       msg: This is a Fail Module, it will fail if Condition not met
+      when: ansible_distribution != "CentOS"
