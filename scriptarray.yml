@@ -1,0 +1,14 @@
+---
+- name: Running Script Practice with Arrays3 from my Server
+  hosts: webservers
+  become: yes
+  become_user: root
+  tasks:
+       
+  - name: Arrays3 Script is being run
+    script: /root/bin/arrays3.sh
+    register: output
+
+  - debug: 
+      var: output.stdout_lines 
+
