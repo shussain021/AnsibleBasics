@@ -1,0 +1,39 @@
+---
+- name: Custom Playbook Installing/Configuring ftp
+  hosts: webservers
+  gather_facts: true
+  remote_user: root
+  tasks:    
+
+  - fail:
+     msg: When Client is not a CentOS OS
+    when: ansible_distribution != "CentOS"
+
+  - name: Installing Vsftpd
+    yum:
+      name: vsftpd
+      state: present
+
+  - name: Starting Vsftpd Service and making it boot persistent
+    service:
+      name: vsftpd
+      state: started
+      enabled: yes
+
+  - name: Copying over file to /var/ftp/pub
+    copy:
+      src: /tmp/CopyFileClient
+      dest: /var/ftp/pub
+      owner: root
+      group: root
+      mode: 0755
+      
+  - lineinfile: 
+      path: /etc/vsftpd/user_list
+      line: 'root'
+      state: absent
+
+  - lineinfile:
+      path: /etc/vsftpd/ftpusers
+      line: 'root'
+      state: absent
