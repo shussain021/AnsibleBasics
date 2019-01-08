@@ -1,0 +1,21 @@
+---
+- name: Creating File/Directory in Client
+  hosts: localhost
+  remote_user: root
+  tasks:
+
+  - name: Creating Directory NoW
+    file: 
+      path: /tmp2/newdirectory
+      owner: linoopstudent
+      group: linoop
+      state: directory
+      mode: 0755
+
+  - name: Creating File Now
+    file:
+      path: /tmp2/newfile
+      owner: linoopstudent
+      group: linoop
+      state: touch
+      mode: 0755
