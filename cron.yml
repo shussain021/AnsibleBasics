@@ -1,0 +1,13 @@
+---
+- name: Practicing cron using ansible
+  hosts: webservers
+  remote_user: root
+  tasks:
+
+  - name: Cronnnnnnn
+    cron: 
+      name: cron entry
+      minute: "0"
+      hour: "5,2"
+      job: " ls -l /tmp > /dev/null" 
+
