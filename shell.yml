@@ -1,0 +1,12 @@
+---
+- name: Shell Module Practice
+  hosts: webservers
+  become: yes
+  remote_user: root
+  tasks:
+  
+  - name: Shell Module Practice Name1
+    shell: tail -5 /var/log/messages >> 5log.txt
+      args:
+        chdir: /tmp
+        creates: 5log.txt
