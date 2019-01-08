@@ -1,0 +1,11 @@
+---
+ - name: Group Module Test
+   hosts: webservers
+   remote_user: root
+   tasks:
+
+   - name: creating new group
+     group:
+       name: linoop
+       gid: 600
+       state: present
