@@ -1,0 +1,9 @@
+---
+- name: Command Module Test
+  hosts: localhost
+  remote_user: root
+  tasks:
+
+  - name: Reading a File called LOL
+    command: cat /root/bin/lol 
+    register: lol1
