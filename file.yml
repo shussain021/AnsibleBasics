@@ -1,0 +1,13 @@
+---
+- name: Changing Permissions in Client for /tmp2
+  hosts: webservers
+  remote_user: root
+  tasks:
+
+  - name: Changing Now
+    file: 
+      path: /tmp2
+      owner: linoopstudent
+      group: linoop
+      mode: 0755
+      recurse: yes
