@@ -1,0 +1,13 @@
+---
+- name: Finding File in Client
+  hosts: webservers
+  remote_user: root
+  tasks:
+
+  - name: Finding Now
+    find: 
+      path: /tmp2
+      age: 1D
+      recurse: yes
+      size: 0 
+
