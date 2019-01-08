@@ -1,0 +1,10 @@
+---
+- name: Fetching File from Client
+  hosts: webservers
+  remote_user: root
+  tasks:
+
+  - name: Fetching Now
+    fetch: 
+      src: /tmp2/fetchfile
+      dest: /tmp/fetchfilenew
