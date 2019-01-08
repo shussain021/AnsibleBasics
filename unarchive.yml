@@ -1,0 +1,12 @@
+---
+- name: Archiving /tmp directory and moving it to Webservers
+  hosts: webservers
+  remote_user: root
+  tasks:
+
+  - name: Archving Now
+    unarchive:
+      src: /tmp/tmpservertar.gz
+      dest: /tmp2/
+      remote_src: yes
+        
